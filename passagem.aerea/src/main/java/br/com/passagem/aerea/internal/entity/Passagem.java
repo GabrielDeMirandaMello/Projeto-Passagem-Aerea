@@ -3,8 +3,8 @@ package br.com.passagem.aerea.internal.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.time.LocalDate;
-import java.util.Date;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PositiveOrZero;
 import java.util.List;
 
 @Entity
@@ -16,18 +16,29 @@ public class Passagem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "passagem")
+    @NotBlank
     @Column
-    private List<Voo> voo;
+    private String descricao;
 
+    @NotBlank
+    @Column
+    private String destino;
+
+    @NotBlank
+    @Column
+    private String nomeAeroporto;
+
+    @PositiveOrZero
+    @Column
+    private Double limiteBagagem;
 
     @Column
     private Enum classePassagem;
 
     @Column
-    private Double valorPassage;
+    private Double valorPassagem;
 
-    @ManyToOne
-    @JoinColumn(name = "passagem")
-    private Carrinho carrinho;
+    @NotBlank
+    @Column
+    private String assento;
 }
