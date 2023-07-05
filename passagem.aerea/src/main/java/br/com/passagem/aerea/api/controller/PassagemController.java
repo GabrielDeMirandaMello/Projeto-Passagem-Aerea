@@ -17,4 +17,6 @@ public interface PassagemController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Passagem> retrieveAllPassagens();
+
+
 }

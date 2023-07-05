@@ -30,10 +30,6 @@ public class User{
     @Column
     private Integer senha;
 
-    @NotBlank
-    @Column
-    private String telefone;
-
     @PositiveOrZero
     @Column
     private Long cartaoCredito;
