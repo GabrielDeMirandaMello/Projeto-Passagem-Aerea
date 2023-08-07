@@ -1,6 +1,6 @@
 package br.com.passagem.aerea.internal.entity;
 
-public enum RoleUser {
 
-    USER, ADMIN;
+public enum UserRole {
+    ADMIN, USER;
 }
